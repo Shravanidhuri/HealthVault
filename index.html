@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HealthVault</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Intro Loader -->
+  <div id="intro">
+    <div class="loader"></div>
+    <h1 class="intro-text">HealthVault</h1>
+  </div>
+
+  <!-- Main Content -->
+  <div id="mainContent" style="display:none;">
+
+    <header>
+      <h2 class="logo">HealthVault</h2>
+      <nav>
+        <button onclick="showSection('dashboard')">Dashboard</button>
+        <button onclick="showSection('profile')">Profile</button>
+        <button onclick="showSection('records')">Records</button>
+        <button onclick="showSection('emergency')">Emergency</button>
+      </nav>
+    </header>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" class="active">
+      <div class="card">
+        <h3>BMI Calculator</h3>
+
+        <input type="number" id="bmiWeight" class="input-box" placeholder="Weight (kg)">
+        <input type="number" id="bmiHeight" class="input-box" placeholder="Height (cm)">
+        <button class="action-btn" onclick="calculateBMI()">Calculate BMI</button>
+
+        <h4 id="bmiResult"></h4>
+      </div>
+    </section>
+
+    <!-- PROFILE -->
+    <section id="profile">
+      <div class="card">
+        <h3>Your Profile</h3>
+
+        <label class="upload-label">Upload Profile Photo</label>
+        <input type="file" id="uploadPhoto" accept="image/*" />
+        <img id="profileImage" src="default.png" class="profile-img" />
+
+        <input type="text" id="fullname" placeholder="Full Name" class="input-box" />
+        <input type="number" id="age" placeholder="Age" class="input-box" />
+        <input type="text" id="gender" placeholder="Gender" class="input-box" />
+
+        <button class="action-btn" onclick="saveProfile()">Save Profile</button>
+        <p id="profileMsg"></p>
+      </div>
+    </section>
+
+    <!-- MEDICAL RECORDS -->
+    <section id="records">
+      <div class="card">
+        <h3>Medical Records</h3>
+        <textarea id="medicalHistory" class="input-area" placeholder="Write or paste your medical history..."></textarea>
+        <button class="action-btn" onclick="saveRecords()">Save Records</button>
+        <p id="recordMsg"></p>
+      </div>
+    </section>
+
+    <!-- EMERGENCY INFO -->
+    <section id="emergency">
+      <div class="card">
+        <h3>Emergency Passport</h3>
+
+        <input type="text" id="bloodGroup" placeholder="Blood Group" class="input-box" />
+        <input type="text" id="allergies" placeholder="Allergies" class="input-box" />
+        <input type="text" id="emergencyContact" placeholder="Emergency Contact" class="input-box" />
+        <input type="text" id="medications" placeholder="Medications" class="input-box" />
+
+        <button class="action-btn" onclick="saveEmergency()">Save Emergency Info</button>
+        <p id="emergencyMsg"></p>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
